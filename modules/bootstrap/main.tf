@@ -68,7 +68,9 @@ resource "google_storage_bucket_object" "file" {
   bucket = google_storage_bucket.this.name
 }
 
-data "google_compute_default_service_account" "this" {}
+data "google_compute_default_service_account" "this" {
+  project = var.project_id
+}
 
 resource "google_storage_bucket_iam_member" "member" {
   bucket = google_storage_bucket.this.name
