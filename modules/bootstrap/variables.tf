@@ -16,6 +16,12 @@ variable "service_account" {
   type        = string
 }
 
+variable "project_id" {
+  description = "Default project for data provider"
+  default     = null
+  type        = string
+}
+
 variable "location" {
   description = "Location in which the GCS Bucket will be deployed. Available locations can be found under https://cloud.google.com/storage/docs/locations."
   type        = string
