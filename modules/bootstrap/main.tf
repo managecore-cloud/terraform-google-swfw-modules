@@ -72,5 +72,5 @@ resource "google_storage_bucket_object" "file" {
 resource "google_storage_bucket_iam_member" "member" {
   bucket = google_storage_bucket.this.name
   role   = "roles/storage.objectViewer"
-  member = "serviceAccount:var.service_account"
+  member = "serviceAccount:${var.service_account}"
 }
