@@ -14,6 +14,7 @@ resource "random_string" "randomstring" {
 
 resource "google_storage_bucket" "this" {
   name                        = join("", [var.name_prefix, random_string.randomstring.result])
+  project = var.project_id
   force_destroy               = true
   uniform_bucket_level_access = true
   location                    = var.location
